@@ -1,0 +1,109 @@
+.footer {
+  background-color: #f6f7ff;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.topSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.logoSection {
+  flex: 1 1 150px;
+}
+
+.smallText {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.logo {
+  max-width: 120px;
+}
+
+.links {
+  flex: 1 1 150px;
+}
+
+.links h4 {
+  color: #5c47d3;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.links a {
+  display: block;
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.links a:hover {
+  color: #5c47d3;
+}
+
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.newsletter h4 {
+  color: #5c47d3;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.newsletter input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.newsletter button {
+  margin-top: 8px;
+  background: #5c47d3;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #4a38b5;
+}
+
+.bottomSection {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.bottomSection a {
+  color: #5c47d3;
+  text-decoration: none;
+}
+
+.policyLinks {
+  margin-top: 8px;
+}
+
+.policyLinks a {
+  margin: 0 10px;
+  font-size: 12px;
+}
