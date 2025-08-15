@@ -136,21 +136,6 @@ export default function CashWithdrawalUI() {
         </div>
       </div>
 
-      {/* Security Badge */}
-      <div className={styles.container}>
-        <div className={styles.badgeCard}>
-          <div className={styles.badgeCircle}>
-            <FaLock size={28} className={styles.badgeShield} />
-          </div>
-          <div className={styles.badgeContent}>
-            <p className={styles.badgeTitle}>100% Safe Cash Withdrawals</p>
-            <p className={styles.badgeText}>
-              Bank-level security & encrypted transactions
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Reviews Section */}
       <div className={styles.container}>
         <div className={styles.sectionHeader}>
