@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import styles from "./CashWithdrawalUI.module.css";
+import {
+  FaGooglePay,
+  FaPhone,
+  FaUniversity,
+  FaStar,
+  FaLock,
+  FaGift,
+  FaHeadset,
+} from "react-icons/fa";
+import { SiPaytm } from "react-icons/si";
 
+// Star Component
 const Star = ({ filled }) => (
-  <svg viewBox="0 0 20 20" className={styles.star} aria-hidden="true">
-    <path d="M10 1.5l2.472 5.007 5.528.804-4 3.898.944 5.508L10 14.95l-4.944 1.767.944-5.508-4-3.898 5.528-.804L10 1.5z" />
-    <defs>
-      <linearGradient id="starFill" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#FDE68A" />
-        <stop offset="100%" stopColor="#F59E0B" />
-      </linearGradient>
-    </defs>
-  </svg>
+  <FaStar
+    className={styles.star}
+    style={{
+      color: filled ? "url(#starFill)" : "#d1d5db",
+    }}
+  />
 );
 
+// Rating Bar
 const RatingBar = ({ label, percent }) => (
   <div className={styles.ratingRow}>
     <span className={styles.ratingLabel}>{label}</span>
     <div className={styles.ratingTrack}>
-      <div 
-        className={styles.ratingFill} 
+      <div
+        className={styles.ratingFill}
         style={{ width: `${percent}%` }}
         data-percent={percent}
       />
@@ -29,87 +38,74 @@ const RatingBar = ({ label, percent }) => (
 
 export default function CashWithdrawalUI() {
   const [activeMethod, setActiveMethod] = useState("Google pay");
-  
+
   const paymentMethods = [
-    { 
-      name: "Google pay", 
-      icon: "https://static-perf1.PLUSEADVI.com/wp-content/uploads/2024/03/money-earning-games-withdrawal-gpay.webp",
-      color: "#4285F4"
+    {
+      name: "Google pay",
+      icon: <FaGooglePay size={28} color="#4285F4" />,
+      color: "#4285F4",
     },
-    { 
-      name: "PhonePe", 
-      icon: "https://static-perf1.PLUSEADVI.com/wp-content/uploads/2024/03/money-earning-games-withdrawal-phonepay.webp",
-      color: "#5F259F"
+    {
+      name: "PhonePe",
+      icon: <FaPhone size={28} color="#5F259F" />,
+      color: "#5F259F",
     },
-    { 
-      name: "Paytm", 
-      icon: "https://static-perf1.PLUSEADVI.com/wp-content/uploads/2024/03/money-earning-games-withdrawal-paytm.webp",
-      color: "#20336B"
+    {
+      name: "Paytm",
+      icon: <SiPaytm size={28} color="#20336B" />,
+      color: "#20336B",
     },
-    { 
-      name: "Bank", 
-      icon: "https://static-perf1.PLUSEADVI.com/wp-content/uploads/2024/03/money-earning-games-withdrawal-bank-transfer.webp",
-      color: "#0F9D58"
-    }
+    {
+      name: "Bank",
+      icon: <FaUniversity size={28} color="#0F9D58" />,
+      color: "#0F9D58",
+    },
   ];
-  
+
   const features = [
     {
       title: "100%",
       subtitle: "Secure & Legal",
-      icon: "https://static-perf1.PLUSEADVI.com/blog-images/uploads/2024/10/real-cash-games-online-rating.webp",
-      color: "#3B82F6"
+      icon: <FaLock size={28} color="#3B82F6" />,
+      color: "#3B82F6",
     },
     {
       title: "Supreme",
       subtitle: "Cashback",
-      icon: "https://static-perf1.PLUSEADVI.com/blog-images/uploads/2025/01/cashback-referral-PLUSEADVI.webp",
-      color: "#8B5CF6"
+      icon: <FaGift size={28} color="#8B5CF6" />,
+      color: "#8B5CF6",
     },
     {
       title: "Dedicated",
       subtitle: "Support",
-      icon: "https://static-perf1.PLUSEADVI.com/blog-images/uploads/2025/01/ludo-online-games-offer-dedicated-customer-service.webp",
-      color: "#EC4899"
-    }
+      icon: <FaHeadset size={28} color="#EC4899" />,
+      color: "#EC4899",
+    },
   ];
 
   return (
     <div className={styles.page}>
       {/* Animated Background */}
       <div className={styles.animatedBackground}></div>
-      
+
       {/* Header */}
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <div className={styles.logoIcon}>Z</div>
-          <span>PLUSEADVI</span>
-        </div>
         <h1 className={styles.headerTitle}>Instant Cash Withdrawal</h1>
       </div>
-      
+
       {/* Payment Methods */}
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <h2>Withdraw to</h2>
-          <p>Select your preferred payment method</p>
-        </div>
-        
         <div className={styles.methodsRow}>
           {paymentMethods.map((method, index) => (
-            <div 
-              key={index} 
-              className={`${styles.methodItem} ${activeMethod === method.name ? styles.activeMethod : ''}`}
+            <div
+              key={index}
+              className={`${styles.methodItem} ${
+                activeMethod === method.name ? styles.activeMethod : ""
+              }`}
               onClick={() => setActiveMethod(method.name)}
-              style={{ '--method-color': method.color }}
+              style={{ "--method-color": method.color }}
             >
-              <div className={styles.methodIconWrapper}>
-                <img
-                  alt={method.name}
-                  className={styles.methodLogo}
-                  src={method.icon}
-                />
-              </div>
+              <div className={styles.methodIconWrapper}>{method.icon}</div>
               <span className={styles.methodText}>{method.name}</span>
             </div>
           ))}
@@ -125,18 +121,12 @@ export default function CashWithdrawalUI() {
 
         <div className={styles.featuresWrap}>
           {features.map((feature, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={styles.featureItem}
-              style={{ '--feature-color': feature.color }}
+              style={{ "--feature-color": feature.color }}
             >
-              <div className={styles.featureIconWrapper}>
-                <img
-                  alt={feature.subtitle}
-                  className={styles.featureIcon}
-                  src={feature.icon}
-                />
-              </div>
+              <div className={styles.featureIconWrapper}>{feature.icon}</div>
               <div className={styles.featureText}>
                 <div className={styles.featureTitle}>{feature.title}</div>
                 <div className={styles.featureSub}>{feature.subtitle}</div>
@@ -150,13 +140,13 @@ export default function CashWithdrawalUI() {
       <div className={styles.container}>
         <div className={styles.badgeCard}>
           <div className={styles.badgeCircle}>
-            <svg viewBox="0 0 24 24" className={styles.badgeShield} aria-hidden="true">
-              <path d="M12 1.75l8 4v5.25c0 5.25-3.42 10.08-8 11.25-4.58-1.17-8-6-8-11.25V5.75l8-4zm0 6.5a.75.75 0 00-.75.75v3.25H8.5a.75.75 0 000 1.5h2.75V17a.75.75 0 001.5 0v-3.25H15.5a.75.75 0 000-1.5h-2.75V9a.75.75 0 00-.75-.75z" />
-            </svg>
+            <FaLock size={28} className={styles.badgeShield} />
           </div>
           <div className={styles.badgeContent}>
             <p className={styles.badgeTitle}>100% Safe Cash Withdrawals</p>
-            <p className={styles.badgeText}>Bank-level security & encrypted transactions</p>
+            <p className={styles.badgeText}>
+              Bank-level security & encrypted transactions
+            </p>
           </div>
         </div>
       </div>
@@ -170,7 +160,9 @@ export default function CashWithdrawalUI() {
 
         <div className={styles.reviewsGrid}>
           <div className={styles.scoreCard}>
-            <div className={styles.bigScore}>4.5<span className={styles.scoreTotal}>/5.0</span></div>
+            <div className={styles.bigScore}>
+              4.5<span className={styles.scoreTotal}>/5.0</span>
+            </div>
             <div className={styles.starsRow}>
               {[1, 2, 3, 4, 5].map((n) => (
                 <Star key={n} filled={n <= 4} />
@@ -206,7 +198,9 @@ export default function CashWithdrawalUI() {
           <a href="#">Terms of Service</a>
           <a href="#">Help Center</a>
         </div>
-        <div className={styles.copyright}>© 2023 PLUSEADVI. All rights reserved.</div>
+        <div className={styles.copyright}>
+          © 2023 PLUSEADVI. All rights reserved.
+        </div>
       </div>
     </div>
   );

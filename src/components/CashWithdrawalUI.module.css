@@ -1,4 +1,4 @@
-/* ZupeeCashWithdrawalUI.module.css */
+/* CashWithdrawalUI.module.css */
 :root {
   --ink: #111827;
   --muted: #6B7280;
@@ -131,11 +131,20 @@
   margin: 0 auto;
 }
 
+/* Mobile-first: 2 items per row */
 .methodsRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   justify-content: center;
+}
+
+/* Tablet and above: 4 items per row */
+@media (min-width: 768px) {
+  .methodsRow {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 .methodItem {
@@ -219,11 +228,20 @@
   z-index: 1;
 }
 
+/* Mobile-first: 2 items per row */
 .featuresWrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin: 2rem auto;
+}
+
+/* Tablet and above: 3 items per row */
+@media (min-width: 768px) {
+  .featuresWrap {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
 .featureItem {
@@ -231,13 +249,19 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem; /* Reduced padding for mobile */
   border-radius: 24px;
   background: var(--card);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   animation: fadeIn 0.6s ease-out;
   animation-fill-mode: backwards;
+}
+
+@media (min-width: 768px) {
+  .featureItem {
+    padding: 2.5rem 1.5rem; /* Original padding for larger screens */
+  }
 }
 
 .featureItem:nth-child(1) { animation-delay: 0.2s; }
@@ -556,4 +580,50 @@
 .copyright {
   color: var(--muted);
   font-size: 0.875rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .headerTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .methodItem {
+    padding: 1rem 0.5rem;
+  }
+  
+  .methodIconWrapper {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .methodText {
+    font-size: 1rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.75rem;
+  }
+  
+  .featureSub {
+    font-size: 1rem;
+  }
+  
+  .badgeCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .ctaCard h3 {
+    font-size: 2rem;
+  }
+  
+  .ctaCard p {
+    font-size: 1rem;
+  }
 }
