@@ -24,7 +24,7 @@ body {
 }
 
 .hero {
-  background-image: url("https://static.vecteezy.com/system/resources/previews/021/599/588/large_2x/abstract-white-and-gray-overlap-circles-background-3d-paper-circle-banner-with-drop-shadows-minimal-simple-design-for-presentation-flyer-brochure-website-book-etc-vector.jpg");
+  background-image: url("https://img.freepik.com/premium-psd/psd-white-abstract-background-abstract-shapes-wallpaper-white_691560-10789.jpg?w=1480");
   background-size: cover;
   background-position: center;
   padding: 80px 20px;
@@ -45,8 +45,8 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(245, 243, 255, 0.95) 100%
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(245, 243, 255, 0.85) 100%
   );
   z-index: 0;
 }
