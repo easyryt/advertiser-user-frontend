@@ -143,7 +143,7 @@ export default function CashWithdrawalUI() {
           <p>What our players say about PLUSEADVI</p>
         </div>
 
-        <div className={styles.reviewsGrid}>
+        <div className={styles.reviewsRow}>
           <div className={styles.scoreCard}>
             <div className={styles.bigScore}>
               4.5<span className={styles.scoreTotal}>/5.0</span>
