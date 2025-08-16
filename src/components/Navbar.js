@@ -72,6 +72,15 @@ const Navbar = () => {
           
           {/* Mobile menu */}
           <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
+            {/* Added close button at the top */}
+            <button 
+              className="mobile-close-btn"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <FaTimes />
+            </button>
+            
             <a href="#home" className="active-link" onClick={() => setIsMenuOpen(false)}>
               Home
               <span className="active-underline"></span>

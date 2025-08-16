@@ -1,3 +1,4 @@
+/* Navbar.css */
 .navbar {
   position: fixed;
   top: 0;
@@ -142,6 +143,25 @@
   width: 100%;
 }
 
+/* New close button styles */
+.mobile-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1e293b;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.mobile-close-btn:hover {
+  transform: rotate(90deg);
+  color: #ef4444;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navbar-container {
@@ -176,5 +196,14 @@
   
   .right-section {
     gap: 20px;
+  }
+  
+  .mobile-menu {
+    padding: 80px 25px 25px;
+  }
+  
+  .mobile-close-btn {
+    top: 20px;
+    right: 20px;
   }
 }
