@@ -166,27 +166,6 @@ export default function CashWithdrawalUI() {
           </div>
         </div>
       </div>
-
-      {/* CTA Section */}
-      <div className={styles.ctaSection}>
-        <div className={styles.ctaCard}>
-          <h3>Ready to Withdraw?</h3>
-          <p>Join millions of players enjoying instant cash withdrawals</p>
-          <button className={styles.ctaButton}>Withdraw Now</button>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className={styles.footer}>
-        <div className={styles.footerLinks}>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Help Center</a>
-        </div>
-        <div className={styles.copyright}>
-          © 2023 PLUSEADVI. All rights reserved.
-        </div>
-      </div>
     </div>
   );
 }
